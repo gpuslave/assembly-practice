@@ -2,40 +2,40 @@ ORG 100h
 .MODEL SMALL
 
 .DATA
-a DW 21 ; initialize with your value
-b DW 20 ; initialize with your value
-X DW 0 ; initialize with your value
+a DW 21 
+b DW 20 
+X DW 0 
 
 .CODE
-; Compare a and b
+
 mov ax, a
 mov bx, b
 cmp ax, bx 
 
-; Jump to appropriate label based on comparison
+
 jl a_less_than_b
 je a_equals_b
 jg a_greater_than_b
 
 a_less_than_b:
-; Calculate X = b/a - 1
+; X = b/a - 1
 mov ax, b
-cwd ; Convert word to doubleword
-idiv a ; AX = b/a, DX = remainder
+cwd 
+idiv a ; AX = b/a
 dec ax ; AX = b/a - 1
 mov X, ax
 jmp end
 
 a_equals_b:
-; Set X = -295
+; X = -295
 mov X, -295
 jmp end
 
 a_greater_than_b:
-; Calculate X = (a-235)/b
+; X = (a-235)/b
 mov ax, a
 sub ax, 235 ; AX = a - 235
-cwd ; Convert word to doubleword
+cwd 
 idiv b ; AX = (a - 235)/b
 mov X, ax
 
