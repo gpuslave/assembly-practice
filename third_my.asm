@@ -2,13 +2,15 @@ ORG 100h
 .MODEL SMALL
 
 .DATA
-a DW 10 ; initialize with your value
+a DW 21 ; initialize with your value
 b DW 20 ; initialize with your value
 X DW 0 ; initialize with your value
 
 .CODE
 ; Compare a and b
-cmp a, b
+mov ax, a
+mov bx, b
+cmp ax, bx 
 
 ; Jump to appropriate label based on comparison
 jl a_less_than_b
