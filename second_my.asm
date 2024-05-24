@@ -2,9 +2,9 @@ ORG 100h
 .MODEL SMALL
 
 .DATA
-c DW 6 
-d DW 3 
-a DW 10 
+c DW -1
+d DW 1
+a DW 6 
 result DW 0
 
 .CODE

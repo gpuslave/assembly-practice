@@ -2,8 +2,8 @@ ORG 100h
 .MODEL SMALL
 
 .DATA
-a DW 21 
-b DW 20 
+a DW -1 
+b DW -2 
 X DW 0 
 
 .CODE
